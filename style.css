@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --border: #868686;
+  --text-base: #afb6c2;
+  --text-title: #d4ccb6;
+  --background: #191816;
+  --form-background: #24221f;
+  --primary-color: #ffc632;
+  --button: #473404;
+
+  --poppins: 'Poppins', sans-serif;
+  --roboto: 'Roboto', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: var(--background);
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  color: var(--text-base);
+}
+
+.banner{
+  display: none;
+}
+
+a {
+  color: var(--primary-color);
+  font-size: 14px;
+  font-family: var(--poppins);
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.container {
+  padding: 40px 20px;
+}
+
+.logo {
+
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.container .login-text {
+  display: flex;
+  
+  justify-content: center;
+  flex-direction: column;
+}
+
+.log{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.container .login-text .log {
+  display: flex;
+  gap: 10px;
+
+  margin-bottom: 5px;
+}
+
+.container h1 {
+  font-size: 24px;
+  font-family: var(--poppins);
+  font-weight: 600;
+}
+
+.container .login-text .info {
+  font-family: var(--roboto);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 27px;
+}
+
+/* form */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+label {
+  font-family: var(--poppins);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.email,
+.password {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid var(--text-base);
+  height: 44px;
+  border-radius: 4px;
+  background-color: transparent;
+  margin-bottom: 20px;
+  padding: 14px 37px;
+
+  font-family: var(--roboto);
+  font-weight: 400;
+  font-size: 14px;
+
+  color: var(--text-base);
+}
+
+.input:focus {
+  outline: none !important;
+  border: 1px solid var(--primary-color);
+}
+
+.email,
+.password {
+  position: relative;
+}
+
+.email .email-icon,
+.password .lock-icon,
+.password .eye-icon {
+  position: absolute;
+  cursor: pointer;
+  stroke: var(--text-base);
+}
+
+.input:focus +  .email-icon{
+  stroke: var(--primary-color);
+}
+
+.input:focus ~ .lock-icon {
+  stroke: var(--primary-color);
+}
+
+
+.input:focus ~ .eye-icon {
+  stroke: var(--primary-color);
+}
+
+
+
+.email .email-icon {
+  top: 36px;
+  left: 13px;
+}
+
+.password .lock-icon {
+  top: 36px;
+  left: 13px;
+}
+
+.password .eye-icon {
+  top: 36px;
+  right: 13px;
+}
+
+/* box */
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.box .check {
+  display: flex;
+  gap: 5px;
+}
+
+.box .check p {
+  font-family: var(--roboto);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18.75px;
+}
+
+.box .checkbox {
+  height: 20px;
+  width: 20px;
+
+  border-radius: 4px;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+
+  cursor: pointer;
+}
+
+.box .checkbox i {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.box .checkbox.show {
+  background-color: var(--primary-color);
+}
+
+.box .checkbox i.show {
+  display: flex;
+}
+
+.box .checkbox.active {
+  background-color: var(--primary-color);
+}
+
+/* buttons */
+.button {
+  background-color: var(--primary-color);
+  width: 100%;
+  color: var(--button);
+  letter-spacing: 1.5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 51px;
+
+  border-radius: 4px;
+  border: none;
+
+  margin-bottom: 14px;
+
+  font-weight: 600;
+  font-family: var(--poppins);
+  font-size: 18px;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons a span {
+  font-weight: 400;
+  margin-right: 5px;
+}
+
+
+/* media */
+
+@media(min-width:1200px){
+
+  body{
+    display: flex;
+    flex-direction: row;
+    
+
+    gap: 0;
+
+    overflow: hidden;
+  }
+
+  .container{
+    background-color: var(--form-background);
+    padding: 50px;
+    margin: 194px 100px;
+    border-radius: 8px;
+    width: 100%;
+    max-width:512px;
+  }
+
+
+
+  .logo{
+    position: fixed;
+    top: 40px;
+    left: 40px;
+  }
+
+  .banner{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+
+  }
+
+  .banner img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+}
+
